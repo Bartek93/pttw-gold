@@ -1,0 +1,7 @@
+.idea
+*.iml
+# Eclipse Core
+.project
+.classpath
+bin/
+out/
