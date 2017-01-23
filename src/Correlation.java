@@ -45,7 +45,7 @@ public class Correlation {
 	
 	
    /**
-    * Metoda wyznacza funkcje korelacji wzajemnej dwoch ciagow - wyznaczenie punktow na wykresie
+    * Metoda wyznacza funkcje korelacji wzajemnej dwoch ciagow
     * @param seq1 ciag 1.
     * @param seq2 ciag 2.
     * @param resolution krok z jakim sa wyznaczane punkty, jeżeli resolution =1 -> 1 bit, jeżeli 2 -> 0.5 bitu itd.

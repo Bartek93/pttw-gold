@@ -33,7 +33,7 @@ public class Lfsr {
         Writer output1 = null;
     	try {
     		output1 = new BufferedWriter(new FileWriter("C:\\PTTW\\pttw.txt", true));
-    		output1.append(generatedSequence+"\n");
+    		//output1.append(generatedSequence+"\n");
     		
     		System.out.println(generatedSequence);
     		
@@ -54,7 +54,7 @@ public class Lfsr {
         Writer output1 = null;
     	try {
     		output1 = new BufferedWriter(new FileWriter("C:\\PTTW\\pttw.txt", true));
-    		output1.append("Max liczba stanów = " + statesNumber +"\n");
+    		//output1.append("Max liczba stanów = " + statesNumber +"\n");
     		
     		System.out.println("Max liczba stanów = " + statesNumber);
     		output1.close();
@@ -100,7 +100,7 @@ public class Lfsr {
                 	 Writer output1 = null;
                  	try {
                  		output1 = new BufferedWriter(new FileWriter("C:\\PTTW\\pttw.txt", true));
-                 		output1.append("Wygenerowany ciąg NIE jest ML" +"\n");
+                 		//output1.append("Wygenerowany ciąg NIE jest ML" +"\n");
                  		
                  		System.out.println("Wygenerowany ciąg NIE jest ML");
                  		
@@ -119,7 +119,7 @@ public class Lfsr {
         Writer output1 = null;
      	try {
      		output1 = new BufferedWriter(new FileWriter("C:\\PTTW\\pttw.txt", true));
-     		output1.append("Wygenerowany ciąg jest ML" +"\n");
+     		//output1.append("Wygenerowany ciąg jest ML" +"\n");
      		
      		System.out.println("Wygenerowany ciąg jest ML");
      		output1.close();
@@ -166,7 +166,7 @@ public class Lfsr {
         Writer output1 = null;
      	try {
      		output1 = new BufferedWriter(new FileWriter("C:\\PTTW\\pttw.txt", true));
-     		output1.append(string +"\n");
+     		//output1.append(string +"\n");
      		
      		System.out.println(string);
      		output1.close();

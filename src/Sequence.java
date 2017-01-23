@@ -29,7 +29,7 @@ public class Sequence {
         Writer output1 = null;
      	try {
      		output1 = new BufferedWriter(new FileWriter("C:\\PTTW\\pttw.txt", true));
-     		output1.append("register size " + sequence.size() +"\n");
+     		//output1.append("register size " + sequence.size() +"\n");
      		
      		System.out.println("register size " + sequence.size());
      		output1.close();
@@ -115,7 +115,8 @@ public class Sequence {
             string += sequence.get(i).getValue();
         }
 
-        return "Sequence{sequence=" + string + '}';
+//        return "Sequence{sequence=" + string + '}';
+        return string;
     }
     /**
      * bit z konca sekwencji wstawia na jego poczatek
@@ -175,7 +176,6 @@ public class Sequence {
     }	
     /**
      * Oblicza sume wyrazow ciagu (traktujac 0 jak -1) i zwraca wynik
-     * @param seq ciag
      * @return wynik
      */
     public int sumOfItems(){

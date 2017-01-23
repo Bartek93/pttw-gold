@@ -94,8 +94,8 @@ public class GoldGenerator {
      * sprawdza czy ciagi sa para preferowana
      * @param seq1 pierwszy ciag
      * @param seq2 drugi ciag
-     * @param l dlugosc rejestru u¿ytego do wygenerowania ciagow L=2^l-1
-     * @return true je¿eli ciegi tworza pare preferowana
+     * @param l dlugosc rejestru uï¿½ytego do wygenerowania ciagow L=2^l-1
+     * @return true jeï¿½eli ciegi tworza pare preferowana
      */
     public static boolean ifPreferredPair(Sequence seq1,Sequence seq2, int l ){
 		
@@ -117,16 +117,21 @@ public class GoldGenerator {
     }	
 	
     /**
-     * Funkcja zwraca zawartosc ci¹gów Golda
+     * Funkcja zwraca zawartosc ciï¿½gï¿½w Golda
      */
     @Override
     public String toString(){
     	
         String info=new String();
-        info+="wygenerowane ciagi Golda ";
-        info+="o dlugosci: "+seq1.length()+"\n";
+//        info+="wygenerowane ciagi Golda ";
+//        info+="o dlugosci: "+seq1.length()+"\n";
+//        for(int i=0;i<generatedSequences.size();i++){
+//            info+="ciag nr "+(i+1)+": \t"+ generatedSequences.get(i).toString()+"\n";
+//        }
+
+
         for(int i=0;i<generatedSequences.size();i++){
-            info+="ciag nr "+(i+1)+": \t"+ generatedSequences.get(i).toString()+"\n";
+            info+=generatedSequences.get(i).toString()+"\n";
         }
 
         Writer output1 = null;
