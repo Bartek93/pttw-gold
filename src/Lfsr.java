@@ -1,3 +1,7 @@
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.Writer;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -5,6 +9,8 @@ import java.util.List;
  * Created by Bartolio on 30.10.2016.
  */
 public class Lfsr {
+	
+	 
 
     private static final int LFSR_LENGTH = 3;
     private static final int VALUE_0_XOR = 0;
@@ -16,6 +22,7 @@ public class Lfsr {
     private int length;
     private int[] xor_numbers;
 
+   
     public Lfsr(int length, int[] xor_numbers) {
         this.length = length;
         this.xor_numbers = xor_numbers;
@@ -23,7 +30,20 @@ public class Lfsr {
         computeStatesNumber();
         computeLfsr();
 
-        System.out.println(generatedSequence);
+        Writer output1 = null;
+    	try {
+    		output1 = new BufferedWriter(new FileWriter("C:\\PTTW\\pttw.txt", true));
+    		output1.append(generatedSequence+"\n");
+    		
+    		System.out.println(generatedSequence);
+    		
+    		output1.close();
+    	} catch (IOException e) {
+    		// TODO Auto-generated catch block
+    		e.printStackTrace();
+    		System.out.println("\n\n\nERROR FILE\n\n\n");
+    	}
+        
     }
 
     /**
@@ -31,7 +51,19 @@ public class Lfsr {
      */
     private void computeStatesNumber() {
         statesNumber = (int) Math.pow(2, length) - 1;
-        System.out.println("Max liczba stanów = " + statesNumber);
+        Writer output1 = null;
+    	try {
+    		output1 = new BufferedWriter(new FileWriter("C:\\PTTW\\pttw.txt", true));
+    		output1.append("Max liczba stanów = " + statesNumber +"\n");
+    		
+    		System.out.println("Max liczba stanów = " + statesNumber);
+    		output1.close();
+    	} catch (IOException e) {
+    		// TODO Auto-generated catch block
+    		e.printStackTrace();
+    		System.out.println("\n\n\nERROR FILE\n\n\n");
+    	}
+        
     }
 
     private void computeLfsr() {
@@ -54,9 +86,9 @@ public class Lfsr {
             }
 
             if (firstBit == 0) {
-                currentState.setBit(Bit.BIT_0, 0);
+                currentState.setBit(new Bit(0), 0);
             } else if (firstBit == 1) {
-                currentState.setBit(Bit.BIT_1, 0);
+                currentState.setBit(new Bit(1), 0);
             }
 
             print(state_index);
@@ -65,13 +97,38 @@ public class Lfsr {
 
             for (int n = 0; n < state_index; n++) {
                 if (sequenceList.get(n).isEqual(currentSequence) && sequenceList.size() != statesNumber) {
-                    System.out.println("Wygenerowany ciąg NIE jest ML");
+                	 Writer output1 = null;
+                 	try {
+                 		output1 = new BufferedWriter(new FileWriter("C:\\PTTW\\pttw.txt", true));
+                 		output1.append("Wygenerowany ciąg NIE jest ML" +"\n");
+                 		
+                 		System.out.println("Wygenerowany ciąg NIE jest ML");
+                 		
+                 		output1.close();
+                 	} catch (IOException e) {
+                 		// TODO Auto-generated catch block
+                 		e.printStackTrace();
+                 		System.out.println("\n\n\nERROR FILE\n\n\n");
+                 	}
+                    
                     return;
                 }
             }
 
         }
-        System.out.println("Wygenerowany ciąg jest ML");
+        Writer output1 = null;
+     	try {
+     		output1 = new BufferedWriter(new FileWriter("C:\\PTTW\\pttw.txt", true));
+     		output1.append("Wygenerowany ciąg jest ML" +"\n");
+     		
+     		System.out.println("Wygenerowany ciąg jest ML");
+     		output1.close();
+     	} catch (IOException e) {
+     		// TODO Auto-generated catch block
+     		e.printStackTrace();
+     		System.out.println("\n\n\nERROR FILE\n\n\n");
+     	}
+        
     }
 
     private void addBitToGeneratedSequence(Sequence currentState) {
@@ -106,7 +163,19 @@ public class Lfsr {
         }
         string = string.substring(0, string.length() - 2);
 
-        System.out.println(string);
+        Writer output1 = null;
+     	try {
+     		output1 = new BufferedWriter(new FileWriter("C:\\PTTW\\pttw.txt", true));
+     		output1.append(string +"\n");
+     		
+     		System.out.println(string);
+     		output1.close();
+     	} catch (IOException e) {
+     		// TODO Auto-generated catch block
+     		e.printStackTrace();
+     		System.out.println("\n\n\nERROR FILE\n\n\n");
+     	}
+        
     }
 
 }
